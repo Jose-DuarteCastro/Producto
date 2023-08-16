@@ -12,7 +12,7 @@ class UI {
     contenedor.classList.add ("bgcolore-success");
 
     contenedor.innerHTML = `
-        <div class="alert alert-primary d-flex mensaje" role="alert" >
+        <div class="alert alert-primary d-flex mensaje ct" role="alert" >
             <p>${producto.nombre}</p>
             <p>${producto.cantidad}</p>
             <p>${producto.año}</p>
@@ -20,6 +20,10 @@ class UI {
     `;
     const ventana = document.getElementById("ventanaemergente");
     ventana.prepend(contenedor);
+  }
+
+  resetear (){
+    document.getElementById("formulario").reset();
   }
 }
 
@@ -38,4 +42,7 @@ document
     ui.addProduct(producto);
 
     event.preventDefault();
+
+    ui.resetear ();
+
   });
